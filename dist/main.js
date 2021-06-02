@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("(function () {\n  const currentWeather = document.querySelector('.current-weather')\n  const searchBtn = document.getElementById('search-btn')\n  const searchForm = document.forms[0]\n\n  searchBtn.addEventListener('click', (e) => {\n    e.preventDefault()\n    const city = searchForm.search.value\n    getCurrentWeather(city)\n  })\n\n  async function getCurrentWeather (city) {\n    try {\n      const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=97015c07e527f4019713d1dd80c9f0e8`)\n      response.json().then(function (response) {\n        if (!response.weather) {\n          throw Error('No records found')\n        } else {\n          console.log(response.weather[0].description)\n          currentWeather.textContent = response.weather[0].description\n        }\n      })\n    } catch (err) {\n      console.log(err)\n    }\n  }\n})()\n\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ })
 
