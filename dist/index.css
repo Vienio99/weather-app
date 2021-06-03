@@ -14,21 +14,53 @@ body {
   background: linear-gradient(190deg, rgba(120,171,205,1) 11%, rgba(70,143,187,1) 53%);
 }
 
+#logo-title {
+  display: flex;
+}
+
 #title {
-  margin-top: 0;
+  margin: 0;
+  line-height: 100px;
+}
+
+#search-form {
+  margin: 0 auto;
+}
+
+#search-elements {
+  display: flex;
+}
+
+#search-input {
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 200px;
+  height: 25px;
+}
+
+#search-input:focus {
+  outline: none;
 }
 
 #navbar-top {
-  background-color: rgb(33, 103, 150);
   color: white;
+  display: flex;
+  align-items: center;
+  height: 80px;
 }
 
 #content {
   flex: 1 0 auto;
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
   background-color: rgb(241, 241, 241);
+  border: 1px solid rgb(241, 241, 241);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
 
 #current-weather {
   display: flex;

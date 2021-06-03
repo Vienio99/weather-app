@@ -42,6 +42,10 @@ const display = (() => {
   const longtermWeather = (response) => {
     const weatherPrediction = document.getElementById('weather-prediction')
 
+    while (weatherPrediction.firstChild) {
+      weatherPrediction.removeChild(weatherPrediction.firstChild)
+    }
+
     for (let i = 0; i < 5; i++) {
       console.log(response.list[i])
       const container = document.createElement('div')

@@ -18,6 +18,7 @@ import { get } from './fetchData'
       e.preventDefault()
       const city = searchForm.search.value
       get.currentWeather(city)
+      get.longtermWeather(city)
       searchForm.reset()
     }
   })

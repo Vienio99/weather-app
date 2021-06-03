@@ -10,13 +10,18 @@
   </head>
   <body>
     <div id="navbar-top">
-      <h1 id="title">Weather app</h1>
-      <form>
-        <label for="search"></label>
-        <input type="text" id="search" name="search"><br>
-        <button type="button" id="search-btn">Search</button>
-      </form>
+      <div id="logo-title">
+        <img src="../img/weather_icons-40.svg">
+        <h1 id="title">Weather app</h1>
+      </div>
     </div>
+    <form id="search-form">
+      <div id="search-elements">
+        <label for="search"></label>
+        <input type="text" id="search-input" name="search"><br>
+        <button type="button" id="search-btn">Search</button>
+      </div>
+    </form>
     <div id="content">
       <div id="current-weather">
         <h1 id="city"></h1>
