@@ -4,20 +4,58 @@ html, body {
 
 html {
   text-align: center;
-  background-color: rgb(207, 207, 207);
+  font-family: 'Ubuntu', sans-serif;
 }
 
 body {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 70%;
-  background-color: rgb(241, 241, 241);
+  background: linear-gradient(190deg, rgba(120,171,205,1) 11%, rgba(70,143,187,1) 53%);
+}
+
+#title {
+  margin-top: 0;
+}
+
+#navbar-top {
+  background-color: rgb(33, 103, 150);
+  color: white;
 }
 
 #content {
   flex: 1 0 auto;
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgb(241, 241, 241);
 }
+
+#current-weather {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+#city {
+  margin-bottom: 0;
+}
+
+#current-overview {
+  margin-bottom: 0;
+}
+
+#current-img {
+  margin: 0 auto;
+}
+
+#weather-prediction {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 
 footer {
   flex-shrink: 0;

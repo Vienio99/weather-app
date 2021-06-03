@@ -4,25 +4,31 @@
     <meta charset="utf-8"/>
     <title>Getting Started</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> 
     <script src="main.js" defer></script>
   </head>
   <body>
-    <div id="content">
-      <h1>Weather app</h1>
+    <div id="navbar-top">
+      <h1 id="title">Weather app</h1>
       <form>
         <label for="search"></label>
         <input type="text" id="search" name="search"><br>
         <button type="button" id="search-btn">Search</button>
       </form>
+    </div>
+    <div id="content">
       <div id="current-weather">
         <h1 id="city"></h1>
         <h2 id="current-overview"></h2>
+        <img src="" id="current-img">
         <div id="current-temperature"></div>
         <div id="current-wind"></div>
         <div id="current-pressure"></div>
         <div id="current-humidity"></div>
       </div>
-      <div id="multiple-days"></div>
+      <h1></h1>
+      <div id="weather-prediction"></div>
     </div>
     <footer></footer>
   </body>
