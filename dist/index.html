@@ -7,11 +7,18 @@
     <script src="main.js" defer></script>
   </head>
   <body>
-    <form>
-      <label for="search"></label>
-      <input type="text" id="search" name="search"><br>
-      <button type="button" id="search-btn">Search</button>
-    </form>
-    <div class="current-weather"></div>
+    <div id="content">
+      <form>
+        <label for="search"></label>
+        <input type="text" id="search" name="search"><br>
+        <button type="button" id="search-btn">Search</button>
+      </form>
+      <div id="current-weather">
+        <h1 id="city"></h1>
+        <div id="current-temperature"></div>
+        <div id="current-humidity"></div>
+      </div>
+    </div>
+    <footer></footer>
   </body>
 </html>
