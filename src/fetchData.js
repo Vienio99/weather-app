@@ -20,11 +20,7 @@ const get = (() => {
     try {
       const response = await window.fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=97015c07e527f4019713d1dd80c9f0e8&units=metric`)
       response.json().then(function (response) {
-        if (!response.cod === '200') {
-          console.log('error')
-        } else {
-          display.longtermWeather(response)
-        }
+        display.longtermWeather(response)
       })
     } catch (err) {
       console.log('not ok')

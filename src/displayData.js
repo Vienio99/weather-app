@@ -6,6 +6,7 @@ const display = (() => {
   const currentWind = document.getElementById('current-wind')
   const currentPressure = document.getElementById('current-pressure')
   const currentHumidity = document.getElementById('current-humidity')
+  const weatherPrediction = document.getElementById('weather-prediction')
 
   const clearAll = function () {
     currentCity.textContent = ''
@@ -15,6 +16,9 @@ const display = (() => {
     currentPressure.textContent = ''
     currentHumidity.textContent = ''
     currentImg.src = ''
+    while (weatherPrediction.firstChild) {
+      weatherPrediction.removeChild(weatherPrediction.firstChild)
+    }
   }
 
   const currentWeather = (response) => {
@@ -28,26 +32,13 @@ const display = (() => {
       currentWind.textContent = 'Wind: ' + response.wind.speed + ' m/s'
       currentPressure.textContent = 'Pressure: ' + response.main.pressure + ' mb'
       currentHumidity.textContent = 'Humidity: ' + response.main.humidity + '%'
-      console.log(response.weather[0].main)
-      if (response.weather[0].main === 'Clear') {
-        currentImg.src = '../img/weather_icons-01.svg'
-      } else if (response.weather[0].main === 'Clouds') {
-        currentImg.src = '../img/weather_icons-17.svg'
-      } else if (response.weather[0].main === 'Rain') {
-        currentImg.src = '../img/weather_icons-19.svg'
-      }
+
+      displayImg(response.weather[0].main, currentImg)
     }
   }
 
   const longtermWeather = (response) => {
-    const weatherPrediction = document.getElementById('weather-prediction')
-
-    while (weatherPrediction.firstChild) {
-      weatherPrediction.removeChild(weatherPrediction.firstChild)
-    }
-
     for (let i = 0; i < 5; i++) {
-      console.log(response.list[i])
       const container = document.createElement('div')
       container.classList.add('prediction-container')
       weatherPrediction.appendChild(container)
@@ -83,13 +74,17 @@ const display = (() => {
       pressure.textContent = 'Pressure: ' + response.list[i].main.pressure + ' mb'
       humidity.textContent = 'Humidity: ' + response.list[i].main.humidity + '%'
 
-      if (response.list[i].weather[0].main === 'Clear') {
-        img.src = '../img/weather_icons-01.svg'
-      } else if (response.list[i].weather[0].main === 'Clouds') {
-        img.src = '../img/weather_icons-17.svg'
-      } else if (response.list[i].weather[0].main === 'Rain') {
-        img.src = '../img/weather_icons-19.svg'
-      }
+      displayImg(response.list[i].weather[0].main, img)
+    }
+  }
+
+  const displayImg = (item, imgElement) => {
+    if (item === 'Clear') {
+      imgElement.src = '../img/weather_icons-01.svg'
+    } else if (item === 'Clouds') {
+      imgElement.src = '../img/weather_icons-17.svg'
+    } else if (item === 'Rain') {
+      imgElement.src = '../img/weather_icons-19.svg'
     }
   }
 

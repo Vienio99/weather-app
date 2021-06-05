@@ -42,6 +42,21 @@ body {
   outline: none;
 }
 
+#search-btn {
+  border: none;
+  border-radius: 10px;
+  margin-left: 5px;
+  background-color: white;
+}
+
+#search-btn:hover {
+  background-color:rgb(241, 241, 241);
+}
+
+#search-btn:active {
+  background-color:rgb(233, 233, 233);
+}
+
 #navbar-top {
   color: white;
   display: flex;
