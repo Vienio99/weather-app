@@ -78,12 +78,12 @@ const display = (() => {
     }
   }
 
-  const displayImg = (item, imgElement) => {
-    if (item === 'Clear') {
+  const displayImg = (weather, imgElement) => {
+    if (weather === 'Clear') {
       imgElement.src = '../img/weather_icons-01.svg'
-    } else if (item === 'Clouds') {
+    } else if (weather === 'Clouds') {
       imgElement.src = '../img/weather_icons-17.svg'
-    } else if (item === 'Rain') {
+    } else if (weather === 'Rain') {
       imgElement.src = '../img/weather_icons-19.svg'
     }
   }
